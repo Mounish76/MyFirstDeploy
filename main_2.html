@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<script src="https://www.w3schools.com/lib/w3.js"></script>
+	<script type="text/javascript">
+	function Save()
+	{
+		alert("Contact Saved Successfully");
+		document.getElementById("Contact").reset();
+	}
+	function myFunction() 
+	{
+ 	 var x = document.getElementById("Contact");
+  		if (x.style.display === "none") 
+  		{
+    		x.style.display = "block";
+  		}
+  		else {
+    		x.style.display = "none";
+  		}
+	}
+	
+	     
+	function display()
+	{
+		var a,b,c,d;
+		a=document.getElementById("name1").value;
+		b=document.getElementById("name2").value;
+		c=document.getElementById("num").value;
+		d=document.getElementById("mail").value;
+		data=`Firstname:${a},
+		      Surname:${b},
+		      Phone:${c},
+		      Email:${d}`
+		document.getElementById("view").innerHTML=data;	
+	}
+	</script>
+	
+	<style type="text/css">
+		
+	#view{
+		background-color: #F5B041;
+	}
+	label { color: #B4886B; 
+		font-weight: bolder; 
+		display: block; 
+		width: 100px; 
+		float: initial; 
+	}
+	.form .input{
+		font-family: "Roboto", sans-serif;
+		outline:1;
+		width: 100%;
+		box-sizing: border-box;
+		border: 0;
+		margin: 0 0 15px;
+		font-size: 14px;
+		background-color: red
+	}
+	</style>
+
+</head>
+<body id="body">
+	<div class="container-fluid">
+			<div class="container-fluid bg-primary text-center text-white p-3">
+            <h1 class="display-4 text-center">Contacts</h1>
+	</div>
+	<div class="container-fluid bg-secondary">
+		<br>
+		<center>
+			<div class="container">
+				<input type="button" id="button1" class="btn btn-warning" value="Create" onclick="myFunction()">
+  				<input type="button" id="button2" class="btn btn-warning" value="Display" onclick="display()">
+			</div>
+		</center>
+		<br>
+	</div>
+	<br>
+	<div id="view">
+	
+	</div><br>
+	<div class="container-fluid bg-danger">
+		<form id="Contact">
+			<h2>Contact</h2>
+			<label>First Name*:</label>
+			<input type="text" name="first" placeholder="FirstName" id="name1" required><br>
+			<label>Sur Name*:</label>
+			<input type="text" name="sur" placeholder="SurName" id="name2" required><br>
+			<label>PhoneNum*:</label>
+			<input type="number" name="phone" placeholder="Number" id="num" required><br>
+			<label>Email:</label>
+			<input type="text" name="email" placeholder="Email" id="mail"><br>
+			<input type="button" name="save" value="Save" onclick="Save()">
+		</form>
+	</div>
+</body>
+</html>
